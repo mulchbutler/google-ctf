@@ -23,6 +23,9 @@ while zipfile.is_zipfile(workingfile):
     os.remove(oldfile)
     count += 1
 
+print(f'Times Unzipped: {count}')
+count = 0
+
 os.rename(workingfile, 'test')
 workingfile = 'test'
 
@@ -39,6 +42,8 @@ while True:
     except:
         break
 
+print(f'Times LZMA Decompressed: {count}')
+count = 0
 
 ## BZ2 ##
 while True:
@@ -53,6 +58,9 @@ while True:
     except:
         break
 
+print(f'Times BZ2 Decompressed: {count}')
+count = 0
+
 ## GZIP ##
 while True:
     try:
@@ -66,6 +74,8 @@ while True:
     except:
         break
 
+print(f'Times GZIP Decompressed: {count}')
+count = 0
 
 ## Decrypt ##
 
@@ -77,9 +87,11 @@ f = open('10-million-password-list-top-1000000.txt')
 
 while True:
     try:
+        count += 1
         line = f.readline().strip('\n')
         zip_ref.setpassword(str.encode(line))
         zip_ref.extract(workingfile)
+        print(f'Passwords Tried: {count}')
         print(line)
         print(open(workingfile).read())
         break

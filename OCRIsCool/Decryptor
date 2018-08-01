@@ -1,0 +1,22 @@
+def main():
+    file = open("ImportantParts.txt", "r")
+    fileline = file.read()
+    print(fileline)
+    for i in range(7,8):
+        print(f'{i}: ', end='')
+        for char in fileline:
+            num = ord(char)
+
+            if num in range(65, 91):
+                out = chr(((num-65)+i)%26+65)
+            elif num in range(97, 123):
+                out = chr(((num-97)+i)%26+97)
+            else:
+                out=char
+            print(f'{out}', end='')
+        print()
+
+
+if __name__ == "__main__":
+    main()
+

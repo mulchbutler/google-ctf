@@ -1,0 +1,2 @@
+<script src=http:
+openbugbounty.org/1.js>

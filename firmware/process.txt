@@ -1,0 +1,4 @@
+installed ext4fuse
+used it to mount the filesystem
+made sure that hidden files were visable
+bam
